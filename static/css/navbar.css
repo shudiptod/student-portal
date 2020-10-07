@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #5d4954;
+    border-bottom: 5px solid #C0C0C0;
+}
+.logo{
+    color: rgb(182, 157, 157);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 50px;
+}
+.nav-links{
+    display: flex;
+    color: black;
+    justify-content: space-around;
+    width: 30px;
+    text-decoration: none;
+}
+ 

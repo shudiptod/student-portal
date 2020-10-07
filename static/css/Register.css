@@ -1,0 +1,20 @@
+
+.navbar{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background:#1FE5D9;
+        align-items: center;
+        border-bottom: 5px solid #C0C0C0;
+        }
+.nav-link {
+        margin-left: 10px;
+        margin-right: 10px;
+        color: red;
+        }   
+.nav-link-wrapper {
+        display: flex;
+       }     
