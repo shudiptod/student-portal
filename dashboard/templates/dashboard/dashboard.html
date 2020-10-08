@@ -1,0 +1,29 @@
+<!doctype html>
+{%include 'dashboard/navbar.html'%}
+<html>
+{% load static %}
+<head>
+    <title>Dashboard</title>
+    
+</head>
+
+<body>
+    
+    {% if user.is_authenticated %}
+        {%block body%}
+        {%endblock%}
+
+
+    {% endif %}
+        <p>You Must Be Logged In. Click 
+            <a href="/login">Here</a>
+        </p>
+
+
+
+
+
+
+    
+</body>
+</html>    

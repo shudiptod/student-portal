@@ -2,7 +2,7 @@ from django.shortcuts import render
 # Create your views here
 
 def dash(request):
-    return render (request, 'dashboard/navbar.html')
+    return render (request, 'dashboard/dashboard.html')
 
 def liveR(request):
     return render (request, 'LiveResult/Live Result.html')

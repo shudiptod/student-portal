@@ -1,0 +1,53 @@
+<!doctype html>
+{%include 'dashboard/navbar.html'%}
+<html>
+{% load static %}
+
+<head>
+    <title>Log In</title>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+{% load crispy_forms_tags %}
+
+<body>
+    {%block body%}
+    <div class="container" style="margin-top: 50px; padding-left: 580px;">
+        <div class="box">
+            <form method="post" class="form-group">
+                {% csrf_token %}
+                {% crispy form %}
+                <button type="submit" class="button form-controlbtn" >Log In</button>
+
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
+</body>
+
+
+</html>
