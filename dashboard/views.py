@@ -1,22 +1,87 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.contrib.auth import logout as logouts
+from django.http import HttpResponse
+
+from dashboard.models import Student,Course
+
 # Create your views here
 
+
+def loginpage(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("/dashboard")
+        else:
+            return redirect("/login")
+    context = {}
+    return render(request, "registration/login.html", context)
+
+
+def logoutPage(request):
+    logouts(request)
+    return redirect("login")
+
+
 def dash(request):
-    return render (request, 'dashboard/dashboard.html')
+    if request.user.is_authenticated:
+        student = Student.objects.filter(user=request.user)
+        if not student:
+            return HttpResponse("student not found")
+        student = student[0]
+
+        context = {
+            "student": student
+        }
+
+        return render(request, 'dashboard/dashboard.html', context)
+    else:
+        return redirect("/login")
+
 
 def liveR(request):
-    return render (request, 'LiveResult/Live Result.html')
+    if request.user.is_authenticated:
+        return render(request, 'LiveResult/Live Result.html')
+    else:
+        return redirect("/login")
+
 
 def regcourse(request):
-    return render (request, 'RegCourse/Registered.html')
+    if request.user.is_authenticated:
+        course = Course.objects.filter(user=request.user)
+        if not course:
+            return HttpResponse("course not found")
+        course = course[0]
+        context = {
+            "course": course
+        }
+        return render(request, 'RegCourse/registered.html', context)
+    else:
+        return redirect("/login")
+
 
 def teEv(request):
-    return render (request, 'TeachEval/Teaching Evaluation.html')
+    if request.user.is_authenticated:
+        return render(request, 'TeachEval/TEvaluation.html')
+    else:
+        return redirect("/login")
+
 
 def drop(request):
-    return render (request, 'DropSeme/drop.html')
+    if request.user.is_authenticated:
+        return render(request, 'DropSeme/drop.html')
+    else:
+        return redirect("/login")
+
 
 def ChangePass(request):
-    return render (request,'ChangePass/Password.html')
-
-  
+    if request.user.is_authenticated:
+        return render(request, 'ChangePass/Password.html')
+    else:
+        return redirect("/login")

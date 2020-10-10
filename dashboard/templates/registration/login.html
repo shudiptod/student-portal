@@ -6,6 +6,19 @@
 <head>
     <title>Log In</title>
     <style>
+        
+        .btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        }
+
+        .success {background-color: #4CAF50;} /* Green */
+        .success:hover {background-color: #46a049;}
+
+
         .button {
             background-color: #4CAF50;
             border: none;
@@ -28,8 +41,21 @@
         <div class="box">
             <form method="post" class="form-group">
                 {% csrf_token %}
-                {% crispy form %}
-                <button type="submit" class="button form-controlbtn" >Log In</button>
+                <div class="box">
+                    <div>
+                        <label>Username</label><br>
+                        <input type="text" class="form-control1" name="username">
+                    </div>
+        
+                    <div>
+                        <label>Password</label><br>
+                        <input type="password" class="form-control2" name="password"><br>
+                    </div><br>
+                    <button type="submit" class="form-controlbtn btn success">Log In</button>
+        
+        
+        
+                </div>
 
             </form>
         </div>

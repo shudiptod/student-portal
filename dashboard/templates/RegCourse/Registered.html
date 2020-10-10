@@ -1,16 +1,75 @@
 <!doctype html>
+{% load static %}
 {%include 'dashboard/navbar.html'%}
 <html>
-{% load static %}
 <head>
     <title>Register</title>
-    <link href="dashboard/navbar.html" rel="import" />
-    <link rel="stylesheet" type="text/css" href="{ % static 'css/Register.css' % }"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}" />
+   <style>
+        table {
+        border-collapse: collapse;
+        width: 90%;
+        background: lightgreen;
+    }
+        th, td {
+            text-align: center;
+            padding: 8px;
+    }
 
+    tr:nth-child(even) {background-color: #f2f2f2;}
+        
+   </style>
 </head>
 
-<body>
-    {%block body%}
+    <body>
+        {%block body%}
+        <section class="head1">
+            <h1 style="padding-left: 580px; padding-top: 20px; padding-bottom: 20px;">Registered Course</h1>
+        </section>
+
+        
+
+        <form>
+            <section style="padding-top: 10px; padding-left: 30px;">
+                
+                <select name="semester">
+                    <option value="sm">Summer 2020</option>
+                    <option value="sp">Spring 2020</option>
+                    <option value="fl">Fall 2020</option>
+                </select>
+            </section>
+        </form>
+        
+        <div style="padding-left: 20px; padding-right: 20px;">
+            <section class="box" style="margin-top: 30px; box-shadow: 0 4px 8px 0 rgba(26, 24, 24, 0.2); ">
+                <div style="border-bottom: 1.5px solid grey">
+                    <h2 style="padding-bottom :5px;padding-top: 5px;padding-left: 500px; background: paleturquoise;">
+                        Registered Course List
+                    </h2>
+                </div>
+        
+            </section>
+        </div>  
+        <div class="container" style="padding-left: 8%;margin-top:30px">
+        <table style="width:90%;">
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Teacher</th>
+            </tr>
+            <tr style="padding-top: 20px">
+                <td style="text-center">{{course.course_code}}</td>
+                <td>{{course.cname}}</td>
+                <td>{{course.teachar}}</td>
+            </tr>
+
+         </table>   
+        </div> 
+
+        
+        
+
+        {%endblock%}
 
 
 
@@ -18,6 +77,10 @@
 
 
 
-    {%endblock%}
-</body>
-</html>    
+
+
+        
+
+    </body>
+    
+    </html>   

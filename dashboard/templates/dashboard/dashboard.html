@@ -1,29 +1,85 @@
 <!doctype html>
+{% load static %}
 {%include 'dashboard/navbar.html'%}
 <html>
-{% load static %}
+
+
 <head>
     <title>Dashboard</title>
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}" />
+
 </head>
 
 <body>
-    
-    {% if user.is_authenticated %}
-        {%block body%}
+
+    {%block body%}
+    <section class="head">
+        <h1 style="padding-left: 580px; padding-top: 20px;">Student Dashboard</h1>
+    </section>
+
+    <div class="row">
+        <div class="column">
+            <div class="card" style="background-color: skyblue;">
+                <h3>৳{{student.payable}}</h3>
+                <p>Total Payable</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card" style="background-color: lightpink" ;>
+                <h3>৳{{student.paid}}</h3>
+                <p>Total Paid</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card" style="background-color: lightslategray" ;>
+                <h3>৳{{student.due}}</h3>
+                <p>Total Due</p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="card" style="background-color: lightgoldenrodyellow" ;>
+                <h3>৳{{student.otherdue}}</h3>
+                <p>Total Others</p>
+            </div>
+        </div>
+        
+    </div>
+        <div style="padding-left: 20px;">
+            <section class="box" style="margin-top: 30px; box-shadow: 0 4px 8px 0 rgba(26, 24, 24, 0.2); ">
+                <div style="border-bottom: 1.5px solid grey">
+                    <h2 style="padding-bottom :5px;padding-top: 5px;padding-left: 5px;">Student Basic Info:</h2>
+                </div>
+                <div style="padding-bottom :5px;padding-top: 5px;">
+                    <p style="padding-left: 15px;">  
+                         Name:          {{user.first_name}} {{user.last_name}}<br><br>
+                         Father Name:   {{student.fname}}<br><br>
+                         Mother Name:   {{student.mname}}<br><br>
+                         Date of birth: {{student.dob}}<br><br>
+                         Blood Group: {{student.bldgrp}}<br><br>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+
+
         {%endblock%}
 
 
-    {% endif %}
-        <p style="font-size: 30px ;margin: auto;">You Must Be Logged In. Click 
-            <a href="/login">Here</a>
-        </p>
 
 
 
 
 
 
-    
+
+
+
 </body>
-</html>    
+
+</html>

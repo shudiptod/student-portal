@@ -1,11 +1,15 @@
-
-body {
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: Arial, Helvetica, sans-serif;
   }
-.head1{
+.head{
     background: lightgrey;
     color: black;
-    padding-bottom: 10px; 
+    padding-bottom: 30px;
+
 }
 select {
   width: 40%;
@@ -16,12 +20,4 @@ select {
   background-color: rgba(86, 138, 158, 0.397);
   border-top: 20px;
   border-bottom: 2px solid blue;
-}
-.box{
-  width: auto;
-  border: 5px solid gray;
-  margin: 0;
-}
-.container{
-  background: lightsteelblue;
 }

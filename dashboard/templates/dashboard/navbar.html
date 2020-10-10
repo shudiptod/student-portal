@@ -67,9 +67,10 @@
       <button class="dropbtn" >Menu</button>
       <div class="dropdown-content">
         <a href="/dashboard">Dashboard</a>
-        <a href="#">Live Result</a>
-        <a href="#">Teaching Evaluation</a>
-        <a href="#">Regestered Course</a>
+        <a href="/live_result">Live Result</a>
+        <a href="/teaching_evaluation">Teaching Evaluation</a>
+        <a href="/reg_course">Regestered Course</a>
+        <a href="/drop">Drop Semester</a>
       </div>
     </div>
     <div>
@@ -77,10 +78,8 @@
     </div>
     <div class>
       <button>
-        <a href="#">
-          <i class="material-icons" style="font-size:36px;color: black;background-color: rgba(245, 245, 245, 0.774);">
-            exit_to_app
-          </i>
+        <a href="{% url 'logout' %}">
+          log out
         </a>
       </button>
     </div>

@@ -20,8 +20,12 @@ from dashboard import views as main_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main_views.dash),
-    path('register/',main_views.regcourse),
-    path('',include("django.contrib.auth.urls")),
+    path('reg_course/',main_views.regcourse),
+    path('login/',main_views.loginpage, name="login"),
     path('dashboard/',main_views.dash),
+    path('drop/',main_views.drop),
+    path('live_result/',main_views.liveR),
+    path('teaching_evaluation/',main_views.teEv),
+    path('logout/',main_views.logoutPage, name="logout"),
     
 ]

@@ -1,0 +1,43 @@
+<!doctype html>
+{%include 'dashboard/navbar.html'%}
+<html>
+{% load static %}
+
+<head>
+    <title>Teaching</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/evalu.css' %}" />
+
+</head>
+
+<body>
+
+    {%block body%}
+    <section class="head">
+        <h1 style="padding-left: 580px; padding-top: 20px;">Teaching Evaluation</h1>
+    </section>
+
+    <form>
+        <section style="padding-top: 10px; padding-left: 30px;">
+            
+            <select name="semester">
+                <option value="sm">Summer 2020</option>
+                <option value="sp">Spring 2020</option>
+                <option value="fl">Fall 2020</option>
+            </select>
+        </section>
+    </form>
+    {%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
