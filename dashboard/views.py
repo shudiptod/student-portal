@@ -32,8 +32,8 @@ def logoutPage(request):
 def dash(request):
     if request.user.is_authenticated:
         student = Student.objects.filter(user=request.user)
-        if not student:
-            return HttpResponse("student not found")
+       # if not student:
+        #    return HttpResponse("student not found")
         student = student[0]
 
         context = {
